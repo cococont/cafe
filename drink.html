@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
+
 <body>
-  
+  <a href="index.html">
+    <h1>Cafe</h1>
+  </a>
+  <h2>menu</h2>
+  <ul>
+    <a href="drink.html">
+      <li>飲み物</li>
+    </a>
+    <a href="">
+      <li>ランチ</li>
+    </a>
+    <a href="">
+      <li>ディナー</li>
+    </a>
+    <a href="">
+      <li>アクセス</li>
+    </a>
+  </ul>
+  <h1>飲み物</h1>
+  <form action="">
+    <ul>
+      <li>
+        <label>
+          <input type="radio" value="coffee" name="drink">
+          コーヒー
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" value="juice" name="drink">
+          紅茶
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="radio" value="tea" name="drink">
+          ジュース
+        </label>
+      </li>
+      <button type="submit">決定</button>
+    </ul>
+  </form>
+  <img id="image" src="">
+  <script>
+    let onclick_submit = document.querySelector("button[type=submit]");
+    onclick_submit.addEventListener("click", (e) => {
+      let target = document.querySelector("input[type=radio]:checked")
+      console.log(target.value);
+      let image = document.querySelector("#image")
+      image.src = ("img/" + target.value + ".png");
+      // console.log("img/" + target.value + ".png")
+      e.preventDefault();
+    });
+  </script>
 </body>
+
 </html>
