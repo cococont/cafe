@@ -51,13 +51,14 @@
       <button type="submit">決定</button>
     </ul>
   </form>
-  <img id="image" src="">
+  <img id="image" src="" class="hidden">
   <script>
     let onclick_submit = document.querySelector("button[type=submit]");
     onclick_submit.addEventListener("click", (e) => {
       let target = document.querySelector("input[type=radio]:checked")
-      console.log(target.value);
+      // console.log(target.value);
       let image = document.querySelector("#image")
+      image.classList.remove('hidden')
       image.src = ("img/" + target.value + ".png");
       // console.log("img/" + target.value + ".png")
       e.preventDefault();
